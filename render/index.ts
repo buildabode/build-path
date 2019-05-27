@@ -24,7 +24,6 @@ try {
   config = safeLoad(
     readFileSync(path.join(__dirname, "..", "path.yml"), "utf8")
   );
-  console.log(config);
 } catch (e) {
   console.log(e);
 }
