@@ -3,8 +3,73 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   margin: 0;
-  min-height: 100%;
+  /* https://css-tricks.com/the-trick-to-viewport-units-on-mobile/ */
+  height: 100vh; /* Fallback for browsers that do not support Custom Properties */
+  height: calc(var(--vh, 1vh) * 100);
   position: relative;
+  overflow: hidden;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
+  display: grid;
+  grid-template-columns: 1fr;
+  grid-template-rows: auto 4rem;
+  grid-template-areas:
+    "main"
+    "footer";
+}
+
+.logo {
+  height: 5rem;
+  margin-bottom: 1rem;
+}
+
+main {
+  grid-area: main;
+  overflow-y: scroll;
+  padding: 1rem 1rem 0 1rem;
+}
+
+footer {
+  grid-area: footer;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.button {
+  -webkit-appearance: none;
+  -moz-appearance: none;
+  appearance: none;
+  position: relative;
+  display: inline-block;
+  vertical-align: middle;
+  text-transform: uppercase;
+  text-align: center;
+  -webkit-text-decoration: none;
+  text-decoration: none;
+  line-height: 38px;
+  white-space: nowrap;
+  min-width: 65px;
+  height: 40px;
+  padding: 0 25px 0 25px;
+  font-weight: 500;
+  border-radius: 5px;
+  font-size: 12px;
+  color: #fff;
+  background-color: #0076ff;
+  border: 1px solid #0076ff;
+  -webkit-transition: all 0.2s ease;
+  transition: all 0.2s ease;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+  cursor: pointer;
+  overflow: hidden;
+  outline: none;
+  margin-left: 10px;
+  /* font-weight: 400;
+  box-shadow: 0 5px 10px rgba(0, 0, 0, 0.12); */
 }

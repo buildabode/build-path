@@ -43,7 +43,6 @@ app.use(async (ctx: Context, next: Function) => {
 
 app.use(async (ctx: Context) => {
   const step = config.path.find(({ slug }) => slug === ctx.query.step);
-  console.log(step);
   return await ctx.render("step.pug", {
     markdownFile: `/${ctx.query.step}.md`,
     actions: step
