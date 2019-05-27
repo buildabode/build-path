@@ -11,7 +11,10 @@ html(lang="en")
             img.logo(src="logo.png", alt="logo")
             zero-md(src=markdownFile)
         footer
-            each to, text in actions
-                a.button(href=to)=text
+            if actions
+                each to, text in actions
+                    a.button(href=to)=text
+            else
+                a(href="/") Back to home
         script(src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js")
         script(type="module", src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/src/zero-md.min.js")

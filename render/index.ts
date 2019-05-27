@@ -11,6 +11,7 @@ import { Context } from "koa";
 const app = new Koa();
 
 let config: {
+  start: string;
   path: {
     slug: string;
     actions: {
@@ -42,9 +43,10 @@ app.use(async (ctx: Context, next: Function) => {
 });
 
 app.use(async (ctx: Context) => {
-  const step = config.path.find(({ slug }) => slug === ctx.query.step);
+  const slug = ctx.query.step || config.start;
+  const step = config.path.find(node => node.slug === slug);
   return await ctx.render("step.pug", {
-    markdownFile: `/${ctx.query.step}.md`,
+    markdownFile: `/${slug}.md`,
     actions: step
       ? step.actions.reduce(
           (acc, { text, to }) => ({
@@ -53,7 +55,7 @@ app.use(async (ctx: Context) => {
           }),
           {}
         )
-      : {}
+      : undefined
   });
 });
 

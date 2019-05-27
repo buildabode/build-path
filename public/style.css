@@ -36,6 +36,12 @@ footer {
   flex-direction: row;
   align-items: center;
   justify-content: flex-end;
+  background-color: #f8f8f8;
+}
+
+a {
+  color: #0076ff;
+  text-decoration: none;
 }
 
 .button {
