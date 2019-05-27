@@ -1,6 +1,8 @@
 # Build Path
 
-Create mobile walkthrough tutorials with branching logic using markdown files in the `steps` directory and the `path.yml` config file.
+Create mobile walkthrough tutorials with branching logic using markdown files and a single config file.
+
+Each step's content uses a markdown file in the `steps` directory. Steps are assigned actions which connect to other steps in `path.yml`.
 
 ![Screenshot](screenshot.png)
 
