@@ -1,4 +1,6 @@
 {
+  "name": "build-path",
+  "license": "MIT",
   "scripts": {
     "tsc": "tsc"
   },
