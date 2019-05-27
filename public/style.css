@@ -3,11 +3,14 @@ body {
     "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
     sans-serif;
   margin: 0;
+  position: fixed;
+}
+
+.app {
   /* https://css-tricks.com/the-trick-to-viewport-units-on-mobile/ */
   height: 100vh; /* Fallback for browsers that do not support Custom Properties */
   height: calc(var(--vh, 1vh) * 100);
   position: relative;
-  overflow: hidden;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   display: grid;
@@ -26,6 +29,7 @@ body {
 main {
   grid-area: main;
   overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
   padding: 1rem 1rem 0 1rem;
 }
 

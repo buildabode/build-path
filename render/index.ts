@@ -47,15 +47,16 @@ app.use(async (ctx: Context) => {
   const step = config.path.find(node => node.slug === slug);
   return await ctx.render("step.pug", {
     markdownFile: `/${slug}.md`,
-    actions: step
-      ? step.actions.reduce(
-          (acc, { text, to }) => ({
-            ...acc,
-            [text]: `/${to}`
-          }),
-          {}
-        )
-      : undefined
+    actions:
+      step && step.actions
+        ? step.actions.reduce(
+            (acc, { text, to }) => ({
+              ...acc,
+              [text]: `/${to}`
+            }),
+            {}
+          )
+        : undefined
   });
 });
 

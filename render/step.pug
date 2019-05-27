@@ -6,15 +6,18 @@ html(lang="en")
         meta(http-equiv="X-UA-Compatible", content="ie=edge")
         title Buildabode
         link(href="style.css", rel="stylesheet", type="text/css")
-    body
-        main
-            img.logo(src="logo.png", alt="logo")
-            zero-md(src=markdownFile)
-        footer
-            if actions
-                each to, text in actions
-                    a.button(href=to)=text
-            else
-                a(href="/") Back to home
         script(src="https://cdn.jsdelivr.net/npm/@webcomponents/webcomponentsjs@2/webcomponents-loader.min.js")
         script(type="module", src="https://cdn.jsdelivr.net/gh/zerodevx/zero-md@1/src/zero-md.min.js")
+        script(src="script.js")
+    body
+        .app
+            main
+                a(href="/")
+                    img.logo(src="logo.png", alt="logo")
+                zero-md(src=markdownFile)
+            footer
+                if actions
+                    each to, text in actions
+                        a.button(href=to)=text
+                else
+                    a(href="/") Back to home
