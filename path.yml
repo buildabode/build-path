@@ -3,11 +3,11 @@ path:
     actions:
       - text: Yes
         to: is-there-water
-      - text: Yes
+      - text: No
         to: find-land
   - slug: is-there-water
     actions:
       - text: Yes
         to: is-there-water
-      - text: Yes
+      - text: No
         to: find-land

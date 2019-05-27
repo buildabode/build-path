@@ -1,10 +1,13 @@
 {
   "version": 2,
-  "routes": [{ "src": "/(?<step>[^/]*)", "dest": "/index?step=step" }],
+  "routes": [
+    { "src": "/(.*).md", "dest": "steps/$1.md" },
+    { "src": "/(.*)\\.(.*)", "dest": "public/$1.$2" },
+    { "src": "/(.*)", "dest": "/render?step=$1" }
+  ],
   "builds": [
-    {
-      "src": "index.ts",
-      "use": "@now/node"
-    }
+    { "src": "steps/**", "use": "@now/static" },
+    { "src": "public/**", "use": "@now/static" },
+    { "src": "*/**.ts", "use": "@now/node" }
   ]
 }
