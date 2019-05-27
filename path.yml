@@ -1,13 +1,20 @@
 path:
-  - slug: do-you-own-land
+  - slug: water-on-site
     actions:
-      - text: Yes
-        to: is-there-water
-      - text: Yes
-        to: find-land
-  - slug: is-there-water
+      - text: yes
+        to: water-confirmed
+      - text: no
+        to: neighboring-water-source
+  - slug: water-confirmed
+  - slug: neighboring-water-source
     actions:
-      - text: Yes
-        to: is-there-water
-      - text: Yes
-        to: find-land
+      - text: city
+        to: municipal-water-hookup
+      - text: well
+        to: well-info
+  - slug: well-info
+    actions:
+      - text: find driller
+        to: well-driller-recs 
+        
+ 
