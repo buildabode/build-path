@@ -1,0 +1,13 @@
+path:
+  - slug: do-you-own-land
+    actions:
+      - text: Yes
+        to: is-there-water
+      - text: Yes
+        to: find-land
+  - slug: is-there-water
+    actions:
+      - text: Yes
+        to: is-there-water
+      - text: Yes
+        to: find-land
