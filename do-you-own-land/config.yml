@@ -1,5 +1,0 @@
-actions:
-  - text: Yes I do
-    link: is-there-water
-  - text: No I don't
-    link: find-land
