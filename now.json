@@ -1,0 +1,10 @@
+{
+  "version": 2,
+  "routes": [{ "src": "/(?<step>[^/]*)", "dest": "/index?step=step" }],
+  "builds": [
+    {
+      "src": "index.ts",
+      "use": "@now/node"
+    }
+  ]
+}
